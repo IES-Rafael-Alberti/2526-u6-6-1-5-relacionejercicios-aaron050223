@@ -74,6 +74,17 @@ class Triangulo : Figura {
     }
 }
 
+fun main() {
+    println("--- Caso 1 >> Círculo (Secundario y Primario) ---")
+    Circulo("Rojo", "C1", 5, 78.5)
+
+    println("\n--- Caso 2 >> Rectángulo (Secundario y Primario) ---")
+    Rectangulo(10, 20)
+
+    println("\n--- Caso 3 >> Triángulo (Sin primario, Secundario) ---")
+    Triangulo("Azul", "T1", 10, 5)
+}
+
 /*
 Ejemplo importante (a implementar por el alumnado): subclase SIN constructor primario.
 
