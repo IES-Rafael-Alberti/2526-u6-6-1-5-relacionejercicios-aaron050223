@@ -71,6 +71,7 @@ class InformeMarkdown : PlantillaInforme() {
 
 /**
  * Implementación de informe en formato CSV.
+ * Cambia las "," por ";" en los resúmenes de los items para que funcione el formato.
  */
 class InformeCsv : PlantillaInforme() {
     override fun cabecera(titulo: String): String = "titulo,$titulo\nitem"
