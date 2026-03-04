@@ -80,7 +80,7 @@ class InformeCsv : PlantillaInforme() {
 }
 
 /**
- * Representa a un individuo identificado por su nombre y edad.
+ * Representa a alguien identificado por su nombre y edad.
  * @property nombre Nombre completo de la persona.
  * @property edad Edad en años. Si se usa el constructor secundario la edad es 0 por defecto.
  */
