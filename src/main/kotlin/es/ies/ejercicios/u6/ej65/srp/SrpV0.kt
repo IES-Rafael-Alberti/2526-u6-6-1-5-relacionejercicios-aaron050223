@@ -15,32 +15,40 @@ import es.ies.ejercicios.u6.ej64.Resumible
  * - genera informe
  * - hace logs
  */
-//class InformeAppServiceV0 {
-//    fun ejecutar() {
-//        println("[SRP:v0] Preparando datos...")
-//        val items: List<Resumible> = listOf(
-//            Persona(" Ana ", 20),
-//            Alumno("Luis", 19, "1DAM"),
-//            Persona("Marta", 18),
-//        )
-//
-//        println("[SRP:v0] Registrando personas...")
-//        val registro = RegistroPersonas()
-//        for (item in items) {
-//            if (item is Persona) registro.registrar(item)
-//        }
-//
-//        println("[SRP:v0] Generando informe Markdown...")
-//        val informe = InformeMarkdown()
-//        val salida = informe.generar("Listado", items)
-//
-//        println("[SRP:v0] Resultado:")
-//        println(salida)
-//
-//        println("[SRP:v0] Buscar 'ana' -> ${registro.buscar("ana")?.resumen()}")
-//    }
-//}
 
+/**
+ * VERSIÓN ORIGINAL (V0)
+ */
+class InformeAppServiceV0 {
+    fun ejecutar() {
+        println("[SRP:v0] Preparando datos...")
+        val items: List<Resumible> = listOf(
+            Persona(" Ana ", 20),
+            Alumno("Luis", 19, "1DAM"),
+            Persona("Marta", 18),
+        )
+
+        println("[SRP:v0] Registrando personas...")
+        val registro = RegistroPersonas()
+        for (item in items) {
+            if (item is Persona) registro.registrar(item)
+        }
+
+        println("[SRP:v0] Generando informe Markdown...")
+        val informe = InformeMarkdown()
+        val salida = informe.generar("Listado", items)
+
+        println("[SRP:v0] Resultado:")
+        println(salida)
+
+        println("[SRP:v0] Buscar 'ana' -> ${registro.buscar("ana")?.resumen()}")
+    }
+}
+
+
+/**
+ * VERSIÓN CORREGIDA (V1)
+ */
 class Logger {
     fun log(mensaje: String) {
         println(mensaje)
@@ -57,7 +65,7 @@ class ProcesadorRegistro(
     }
 }
 
-class InformeAppServiceV0(
+class InformeAppServiceV1(
     private val procesador: ProcesadorRegistro,
     private val informe: PlantillaInforme,
     private val logger: Logger
@@ -87,7 +95,7 @@ fun main() {
     val logger = Logger()
     val informe = InformeMarkdown()
 
-    val app = InformeAppServiceV0(procesador, informe, logger)
+    val app = InformeAppServiceV1(procesador, informe, logger)
 
     app.ejecutar(datosPrueba)
 }
