@@ -42,7 +42,7 @@ class Rectangulo(
         println("[Rectangulo:secondary] constructor(ancho, alto)")
     }
 
-    // TODO: añade otro constructor secundario que cree un cuadrado (lado -> ancho=alto)
+    constructor(color: String, etiqueta: String, lado: Int) : this(color, etiqueta, lado, lado) {}
 }
 
 class Circulo(
@@ -54,7 +54,35 @@ class Circulo(
         println("[Circulo:init] radio=$radio")
     }
 
-    // TODO: añade al menos un constructor secundario que delegue con this(...)
+    constructor(color: String, etiqueta: String, radio: Int, area: Double) : this(color, etiqueta, radio) {
+        println("[Circulo:secondary] area=$area")
+    }
+}
+
+class Triangulo : Figura {
+    val base: Int
+    val altura: Int
+
+    constructor(color: String, etiqueta: String, base: Int, altura: Int) : super(color, etiqueta) {
+        println("[Triangulo:secondary] constructor(base, altura) -> constructor padre")
+        this.base = base
+        this.altura = altura
+    }
+
+    constructor(color: String, etiqueta: String, lado: Int) : this(color, etiqueta, lado, lado) {
+        println("[Triangulo:secondary] constructor(lado) -> this(base, altura)")
+    }
+}
+
+fun main() {
+    println("--- Caso 1 >> Círculo (Secundario y Primario) ---")
+    Circulo("Rojo", "C1", 5, 78.5)
+
+    println("\n--- Caso 2 >> Rectángulo (Secundario y Primario) ---")
+    Rectangulo(10, 20)
+
+    println("\n--- Caso 3 >> Triángulo (Sin primario, Secundario) ---")
+    Triangulo("Azul", "T1", 10, 5)
 }
 
 /*

@@ -26,4 +26,3 @@ class ReportGeneratorV0 {
             for (line in lines) appendLine("- $line")
         }
 }
-

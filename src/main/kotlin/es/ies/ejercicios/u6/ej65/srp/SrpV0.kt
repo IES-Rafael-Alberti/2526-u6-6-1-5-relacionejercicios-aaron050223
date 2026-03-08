@@ -1,8 +1,10 @@
 package es.ies.ejercicios.u6.ej65.srp
 
 import es.ies.ejercicios.u6.ej64.Alumno
+import es.ies.ejercicios.u6.ej64.InformeCsv
 import es.ies.ejercicios.u6.ej64.InformeMarkdown
 import es.ies.ejercicios.u6.ej64.Persona
+import es.ies.ejercicios.u6.ej64.PlantillaInforme
 import es.ies.ejercicios.u6.ej64.RegistroPersonas
 import es.ies.ejercicios.u6.ej64.Resumible
 
@@ -13,6 +15,7 @@ import es.ies.ejercicios.u6.ej64.Resumible
  * - genera informe
  * - hace logs
  */
+
 class InformeAppServiceV0 {
     fun ejecutar() {
         println("[SRP:v0] Preparando datos...")
@@ -38,8 +41,3 @@ class InformeAppServiceV0 {
         println("[SRP:v0] Buscar 'ana' -> ${registro.buscar("ana")?.resumen()}")
     }
 }
-
-fun main() {
-    InformeAppServiceV0().ejecutar()
-}
-
