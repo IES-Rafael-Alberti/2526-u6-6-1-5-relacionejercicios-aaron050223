@@ -1,7 +1,6 @@
-package es.ies.ejercicios.u6.ej65.lsp
+package es.ies.ejercicios.u6.ej65.lsp.lspV1
 
-import es.ies.ejercicios.u6.ej64.Persona
-import es.ies.ejercicios.u6.ej65.lsp.lspV1.RepositorioCompleto
+import es.ies.ejercicios.u6.ej64.*
 
 fun cliente(repo: RepositorioCompleto) {
     repo.guardar(Persona("Ana", 20))
